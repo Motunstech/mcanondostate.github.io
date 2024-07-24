@@ -49,31 +49,35 @@
         width: 100%;
     }
 }
-  
-  .responsive-text {
-    background-color: #f5f5f5; /* Background color */
-    padding: 10px; /* Padding around the text */
-    text-align: center; /* Center-align text */
-}
+ 
+ .moving-text {
+            position: relative;
+            overflow: hidden;
+            background: #f5f5f5;
+            padding: 10px;
+            height: 50px;
+        }
 
-.responsive-text p {
-    margin: 0;
-    font-size: 1.5rem; /* Default font size */
-    line-height: 1.4; /* Line height for readability */
-}
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: marquee 8s linear infinite;
+        }
 
-@media (max-width: 768px) {
-    .responsive-text p {
-        font-size: 1.2rem; /* Slightly smaller font size on tablets */
-    }
-}
+        .marquee p {
+            display: inline;
+            margin: 0;
+        }
 
-@media (max-width: 480px) {
-    .responsive-text p {
-        font-size: 1rem; /* Smaller font size on mobile devices */
-    }
-}
-
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
 
     </style>
 </head>
@@ -99,10 +103,11 @@
     </header>
     
 
-    <section id="home">
-        <section class="responsive-text">
-    <p>Welcome to the official website of the Muslim Corpers' Association of Nigeria, Ondo State Chapter</p>
-</section>
+     <section class="moving-text">
+        <div class="marquee">
+            <p>Welcome to the official website of the Muslim Corpers' Association of Nigeria, Ondo State Chapter</p>
+        </div>
+    </section>
 
     <!-- Hero Section -->
     <section class="hero">
